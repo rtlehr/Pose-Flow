@@ -211,3 +211,14 @@ Central data model for pose images with related metadata:
   difficultyReason: string;
   packId?: number;
 }
+
+
+### Key Architectural Features
+- Offline-First Design: SQLite database enables full functionality without internet connection
+- Natural Language Pose Selection: Semantic matching of descriptions to pose keywords
+- Mobile-Optimized Interface: Touch-friendly controls and appropriate viewport handling
+- Hierarchical Keyword System: Weighted keywords for more accurate pose matching
+- Persistence Layer Abstraction: Storage interface allowing database implementation swapping
+-- Image Handling: Efficient storage and loading of pose images with size constraints
+- Flexible Session Configuration: Multiple ways to configure drawing sessions
+- Professional Tools: Features specifically for working figure models
