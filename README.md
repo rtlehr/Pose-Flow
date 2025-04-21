@@ -6,18 +6,18 @@ Pose Flow is a specialized mobile application designed for figure drawing sessio
 
 ## Technology Stack
 
-- **Frontend**: React.js with TypeScript
+- **Frontend**: Angular with TypeScript
 - **UI Framework**: Tailwind CSS with shadcn components
-- **State Management**: React Query for server state, React Hooks for local state
-- **Routing**: Wouter for client-side routing
-- **Backend**: Express.js API server
+- **State Management**: 
+- **Routing**: 
+- **Backend**: 
 - **Database**: 
   - Original: PostgreSQL with Neon Database (serverless)
   - Migration: SQLite for offline-first mobile functionality
 - **ORM**: Drizzle ORM with SQLite adapter
 - **Image Processing**: Native mobile capabilities (camera, gallery access)
 - **AI Integration**: OpenAI API for pose analysis and keyword generation
-- **Form Handling**: React Hook Form with Zod validation
+- **Form Handling**: 
 - **Deployment Target**: Mobile app stores (Apple App Store, Google Play Store)
 
 ## Database Migration
