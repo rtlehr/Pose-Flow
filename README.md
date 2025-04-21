@@ -211,7 +211,7 @@ Central data model for pose images with related metadata:
   difficultyReason: string;
   packId?: number;
 }
-
+```
 
 ### Key Architectural Features
 - Offline-First Design: SQLite database enables full functionality without internet connection
