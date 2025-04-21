@@ -212,8 +212,68 @@ Central data model for pose images with related metadata:
   packId?: number;
 }
 ```
+### PosePack
+Collections of related poses available for download:
+```typescript
+{
+  id: number;
+  name: string;
+  description: string;
+  categories: string[];
+  sampleImageUrls: string[];
+  poseCount: number;
+  isPremium: boolean;
+  price?: number;
+}
+```
 
-### Key Architectural Features
+### ModelingSession
+Records of professional modeling work:
+```typescript
+{
+  id: number;
+  title: string;
+  hostId: number;
+  hostName: string;
+  hostContactInfo?: string;
+  sessionDate: string;
+  startTime?: string;
+  endTime?: string;
+  pay?: number;
+  notes?: string;
+  rating: number;
+}
+```
+
+### Host
+Organizations or individuals who run figure drawing sessions:
+```typescript
+{
+  id: number;
+  name: string;
+  contactInfo?: string;
+  location?: string;
+  notes?: string;
+  rating: number;
+}
+```
+
+### BlogArticle
+Educational content for users:
+```typescript
+{
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  author: string;
+  publishDate: string;
+  tags: string[];
+  imageUrl?: string;
+}
+```
+
+## Key Architectural Features
 - Offline-First Design: SQLite database enables full functionality without internet connection
 - Natural Language Pose Selection: Semantic matching of descriptions to pose keywords
 - Mobile-Optimized Interface: Touch-friendly controls and appropriate viewport handling
