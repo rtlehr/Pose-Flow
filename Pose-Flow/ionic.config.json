@@ -1,0 +1,7 @@
+{
+  "name": "Pose-Flow",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
