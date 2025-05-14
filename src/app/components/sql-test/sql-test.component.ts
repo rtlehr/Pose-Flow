@@ -11,17 +11,24 @@ import { SqliteService } from '../../services/sqlite/sqlite.service';
   standalone: true,
   imports: [CommonModule, IonicModule],
 })
+
 export class SqlTestComponent implements OnInit {
+
   results: any[] = [];
 
   constructor(private sqliteService: SqliteService) {}
 
   async ngOnInit() {
+
     try {
+
       const result = await this.sqliteService.executeQuery('SELECT * FROM users');
       this.results = result.values;
+
     } catch (error) {
-      console.error('SQLite error:', error);
+      
+      
     }
+
   }
 }
