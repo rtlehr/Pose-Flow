@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent } from '@ionic/angular/standalone';
 
+import { UiService } from '../../services/ui/ui.service';
+
 @Component({
   selector: 'app-person',
   templateUrl: './person.page.html',
@@ -10,11 +12,8 @@ import { IonContent } from '@ionic/angular/standalone';
   standalone: true,
   imports: [IonContent, CommonModule, FormsModule]
 })
-export class PersonPage implements OnInit {
+export class PersonPage {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private ui: UiService) { }
 
 }

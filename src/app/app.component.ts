@@ -2,9 +2,12 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@capacitor/splash-screen';
 
+import { Router, ActivationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { UiService } from './services/ui/ui.service';
 
 import { CommonModule } from '@angular/common';
+
 import {
   IonApp,
   IonHeader,
@@ -61,7 +64,7 @@ export class AppComponent implements OnInit, AfterViewInit  {
   
   public isAppReady = false;
 
-  constructor(private platform: Platform, private ui: UiService) {
+  constructor(private router: Router, private platform: Platform, private ui: UiService) {
     addIcons({ logoIonic, calendar, body, albums, time });
   }
 
@@ -81,7 +84,27 @@ export class AppComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit() {
-    // cache the header/footer elements for the rest of the app
+    
     this.ui.init();
+    
+    this.router.events
+      .pipe(
+        filter((e): e is ActivationEnd => e instanceof ActivationEnd)
+      )
+      .subscribe(e => {
+        // <-- bracket notation here
+        const hide = !!e.snapshot.data['hideChrome'];
+
+        console.log("hide: " + hide);
+
+        if (hide) {
+          this.ui.hideHeader();
+          this.ui.hideFooter();
+        } else {
+          this.ui.showHeader();
+          this.ui.showFooter();
+        }
+      });
+
   }
 }

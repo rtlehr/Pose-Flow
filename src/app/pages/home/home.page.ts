@@ -1,30 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { IonContent, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { logoIonic, star } from 'ionicons/icons';
+import { star } from 'ionicons/icons';
 
-import { UiService } from '../../services/ui/ui.service';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [ IonContent, IonIcon, IonButton],
+  imports: [ IonContent, IonIcon, IonButton,  RouterModule, RouterOutlet],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
-  constructor(private ui: UiService) {
+  constructor() {
     addIcons({ star });
   }
-
-  async ngOnInit() {
-    
-    this.ui.hideHeader();
-    this.ui.hideFooter();
-  
-  }
-
-
 
 }
