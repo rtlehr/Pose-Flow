@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@capacitor/splash-screen';
+
+import { UiService } from './services/ui/ui.service';
 
 import { CommonModule } from '@angular/common';
 import {
@@ -55,11 +57,11 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit  {
   
   public isAppReady = false;
 
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, private ui: UiService) {
     addIcons({ logoIonic, calendar, body, albums, time });
   }
 
@@ -75,5 +77,11 @@ export class AppComponent implements OnInit {
 
     // now show your real UI
     this.isAppReady = true;
+
+  }
+
+  ngAfterViewInit() {
+    // cache the header/footer elements for the rest of the app
+    this.ui.init();
   }
 }
