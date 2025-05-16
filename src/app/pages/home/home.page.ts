@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent  } from '@ionic/angular/standalone';
 
-import { IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { logoIonic } from 'ionicons/icons';
-
-import { SqlTestComponent } from 'src/app/components/sql-test/sql-test.component';
+import { logoIonic, star } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, SqlTestComponent],
+  imports: [ IonContent, IonIcon, IonButton],
 })
 export class HomePage {
   constructor() {
-    addIcons({ logoIonic });
+    addIcons({ star });
   }
 }
